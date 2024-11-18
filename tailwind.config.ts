@@ -44,7 +44,7 @@ export default {
         },
         card: {
           DEFAULT: "var(--card)",
-          light: "#FFFFFF",
+          light: "#F8FAFC",
           dark: "#1E293B",
           foreground: "var(--card-foreground)",
         },

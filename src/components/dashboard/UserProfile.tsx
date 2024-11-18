@@ -10,7 +10,7 @@ const UserProfile = () => {
           <AvatarFallback>JD</AvatarFallback>
         </Avatar>
       </HoverCardTrigger>
-      <HoverCardContent className="w-80 p-6 bg-card shadow-lg backdrop-blur-sm">
+      <HoverCardContent className="w-80 p-6 bg-card shadow-lg backdrop-blur-sm border-0">
         <div className="flex gap-6">
           <Avatar className="h-14 w-14 ring-2 ring-primary/20">
             <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=1" />
