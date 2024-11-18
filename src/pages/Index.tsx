@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { BarChart, Bar } from "recharts";
-import { Sun, Moon, Menu, Download, MoreHorizontal } from "lucide-react";
-import { useTheme } from "@/components/theme-provider";
+import { Menu, MoreHorizontal, Download } from "lucide-react";
+import Sidebar from "@/components/dashboard/Sidebar";
+import UserProfile from "@/components/dashboard/UserProfile";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
 
 const data = [
   { month: "Q1", revenue: 250000, target: 200000 },
@@ -52,58 +52,24 @@ const transactions = [
 ];
 
 const Index = () => {
-  const { theme, setTheme } = useTheme();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#1A1F2C] text-white">
-      {/* Sidebar */}
-      <aside className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
-        <div className="h-full px-3 py-4 overflow-y-auto bg-[#222436]">
-          <div className="flex items-center gap-2 mb-8 px-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-white font-semibold">A</span>
-            </div>
-            <span className="text-xl font-semibold text-white">Apexify</span>
-          </div>
-          <ul className="space-y-2">
-            <li>
-              <a href="#" className="flex items-center p-2 text-white rounded-lg bg-primary/10">
-                <span>Dashboard</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="flex items-center p-2 text-gray-400 rounded-lg hover:bg-primary/10">
-                <span>Sales</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="flex items-center p-2 text-gray-400 rounded-lg hover:bg-primary/10">
-                <span>Analytics</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </aside>
+    <div className="min-h-screen bg-background text-foreground">
+      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-      {/* Main content */}
       <div className="p-4 md:ml-64">
         <div className="flex justify-between items-center mb-6">
           <div className="flex items-center gap-4">
-            <button className="md:hidden" onClick={() => setSidebarOpen(!sidebarOpen)}>
+            <button 
+              className="md:hidden" 
+              onClick={() => setSidebarOpen(true)}
+            >
               <Menu className="h-6 w-6" />
             </button>
             <h1 className="text-xl font-semibold">Dashboard</h1>
           </div>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-lg hover:bg-primary/10"
-            >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </button>
-            <div className="w-8 h-8 rounded-full bg-gray-600"></div>
-          </div>
+          <UserProfile />
         </div>
 
         {/* Stats Grid */}
