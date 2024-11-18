@@ -1,3 +1,5 @@
+import { MoreHorizontal } from "lucide-react";
+
 const sessionData = [
   { country: "United States", sessions: 85, flag: "🇺🇸" },
   { country: "Japan", sessions: 70, flag: "🇯🇵" },

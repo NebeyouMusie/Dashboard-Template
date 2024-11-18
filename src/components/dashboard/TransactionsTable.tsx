@@ -1,3 +1,5 @@
+import { Download, MoreHorizontal } from "lucide-react";
+
 const transactions = [
   {
     id: 1,
