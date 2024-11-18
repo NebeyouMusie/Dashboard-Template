@@ -17,31 +17,31 @@ const Sidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) 
 
   return (
     <aside className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
-      <div className="h-full px-3 py-4 overflow-y-auto bg-[#222436] flex flex-col">
+      <div className="h-full px-3 py-4 overflow-y-auto bg-card border-r border-border/50 flex flex-col">
         <div className="flex items-center justify-between mb-8 px-2">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <span className="text-white font-semibold">A</span>
             </div>
-            <span className="text-xl font-semibold text-white">Apexify</span>
+            <span className="text-xl font-semibold text-foreground">Apexify</span>
           </div>
           <button 
             onClick={onClose} 
-            className="md:hidden text-gray-400 hover:text-white"
+            className="md:hidden text-muted hover:text-foreground transition-colors"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
-        <ul className="space-y-2 flex-1">
+        <ul className="space-y-1.5 flex-1">
           {menuItems.map((item) => (
             <li key={item.label}>
               <a
                 href="#"
-                className={`flex items-center gap-3 p-2 text-sm rounded-lg ${
+                className={`flex items-center gap-3 px-3 py-2 text-sm rounded-lg transition-colors ${
                   item.active 
-                    ? "text-white bg-primary/10" 
-                    : "text-gray-400 hover:bg-primary/10"
+                    ? "text-primary bg-primary/10 font-medium" 
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/10"
                 }`}
               >
                 {item.icon}
@@ -51,10 +51,10 @@ const Sidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) 
           ))}
         </ul>
 
-        <div className="pt-2 border-t border-gray-700">
+        <div className="pt-2 border-t border-border/50">
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="flex items-center gap-3 w-full p-2 text-sm text-gray-400 rounded-lg hover:bg-primary/10"
+            className="flex items-center gap-3 w-full px-3 py-2 text-sm text-muted-foreground rounded-lg hover:text-foreground hover:bg-muted/10 transition-colors"
           >
             {theme === "dark" ? (
               <>

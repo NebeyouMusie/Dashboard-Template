@@ -24,13 +24,15 @@ export default {
         ring: "hsl(var(--ring))",
         background: {
           DEFAULT: "var(--background)",
-          light: "#ffffff",
-          dark: "#1A1F2C",
+          light: "#F8FAFC",
+          dark: "#0F172A",
         },
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#8B5CF6",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#6366F1",
+          foreground: "#FFFFFF",
+          light: "#818CF8",
+          dark: "#4F46E5",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -38,16 +40,16 @@ export default {
         },
         card: {
           DEFAULT: "var(--card)",
-          light: "#ffffff",
-          dark: "#222436",
-          foreground: "#FFFFFF",
+          light: "#FFFFFF",
+          dark: "#1E293B",
+          foreground: "var(--card-foreground)",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "#8E9196",
+          DEFAULT: "#64748B",
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
@@ -55,8 +57,8 @@ export default {
           foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "var(--popover)",
+          foreground: "var(--popover-foreground)",
         },
       },
       fontFamily: {
